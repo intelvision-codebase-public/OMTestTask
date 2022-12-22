@@ -1,0 +1,30 @@
+<div class="todo-item">
+    <div class="todo-item-data" [class.complete]="todo.done">
+        <div>
+            <span class="todo-item-title">Label:</span> {{todo.label}}
+        </div>
+        <div>
+            <span class="todo-item-title">Description:</span> {{todo.description}}
+        </div>
+        <div>
+            <span class="todo-item-title">Category:</span> {{todo.category}}
+        </div>
+    </div>
+
+    <div class="todo-item-complete-date" *ngIf="todo.done">
+        <span class="todo-item-title">Complete Date:</span> {{todo?.completeDate | date: 'shortDate'}}
+    </div>
+
+    <div class="footer-action">
+        <label class="checkbox-container">Complete
+            <input type="checkbox" [checked]="todo.done" (change)="updateCompleteStatus(todo)">
+            <span class="checkmark"></span>
+          </label>
+        <button (click)="editTodo(todo)" class="button button-icon button-edit">
+            <span class="material-symbols-outlined">edit</span>
+        </button>
+        <button (click)="deleteTodo(todo)" class="button button-icon button-delete">
+            <span class="material-symbols-outlined">delete</span>
+        </button>
+    </div>
+</div>

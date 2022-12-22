@@ -1,0 +1,24 @@
+.todo-item{
+    &-title {
+        font-weight: bold;
+    }
+
+    &-complete-date{
+        font-size: 12px;
+
+    }
+}
+
+.complete {
+    text-decoration: line-through;
+}
+
+.container {
+    text-decoration: none;
+}
+
+.footer-action {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}

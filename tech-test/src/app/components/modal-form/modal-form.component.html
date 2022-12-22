@@ -1,0 +1,47 @@
+<form [formGroup]="myForm" class="todo-form">
+    <div>
+      <label>
+        Label:
+        <input formControlName="label" placeholder="Label">
+        <small class="form-error"
+            *ngIf="myForm.get('label').hasError('required') && myForm.get('label').touched">
+                This field is required.
+        </small>
+
+        <small class="form-error"
+            *ngIf="myForm.get('label').hasError('maxlength') && myForm.get('label').touched">
+                Max lenght 20.
+        </small>
+      </label>
+    </div>
+    <div>
+      <label>
+        Description:
+        <input formControlName="description" placeholder="Description">
+        <small class="form-error"
+            *ngIf="myForm.get('description').hasError('required') && myForm.get('description').touched">
+                This field is required.
+        </small>
+
+        <small class="form-error"
+            *ngIf="myForm.get('description').hasError('maxlength') && myForm.get('description').touched">
+                Max lenght 20.
+        </small>
+      </label>
+    </div>
+    <div>
+      <label>
+        Category:
+        <input formControlName="category" placeholder="Category">
+        <small class="form-error"
+            *ngIf="myForm.get('category').hasError('required') && myForm.get('category').touched">
+                This field is required.
+        </small>
+
+        <small class="form-error"
+            *ngIf="myForm.get('category').hasError('maxlength') && myForm.get('category').touched">
+                Max lenght 20.
+        </small>
+      </label>
+    </div>
+  </form>

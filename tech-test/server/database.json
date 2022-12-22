@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 2,
+      "label": "Taxes",
+      "description": "Start doing my taxes and contact my accountant jhon for advice",
+      "category": "bureaucracy",
+      "done": true,
+      "completeDate": "Thu Dec 22 2022"
+    },
+    {
+      "label": "Kitchen Cleanup 333",
+      "description": "Clean my dirty kitchen 123",
+      "category": "house 123",
+      "done": false,
+      "completeDate": null,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "label": "TEst",
+      "description": "test",
+      "category": "123123123",
+      "done": false,
+      "completeDate": null
+    }
+  ]
+}

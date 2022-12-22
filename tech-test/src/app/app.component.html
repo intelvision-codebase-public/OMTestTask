@@ -1,0 +1,45 @@
+<h1 class="title-text">Welcome to Origin's Angular Technical Test: {{title}}</h1>
+
+<div class="container">
+    <div class="header-actions mb-2">
+        <div class="header-actions-buttons row">
+            <div class="col">
+                <button (click)="openModal(modal)" class="button button-primary">Add new task</button>
+            </div>
+            <div class="col-1 d-flex align-items-center">
+                <button class="button button-icon button-icon-primary" (click)="filterToggle()"><span class="material-symbols-outlined">filter_alt</span></button>
+            </div>
+        </div>
+
+        <div *ngIf="isShowFilters" class="filters">
+            <app-filters
+                [currentFilter]="currentFilter"
+                (filterTodosEvent)="filterTodos($event)"
+            >
+            </app-filters>
+        </div>
+    </div>
+
+    <app-modal #modal [active]="isModalShow">
+          <app-modal-form
+            [myForm]="myForm"
+          >
+          </app-modal-form>
+        <button class="button button-cancel mr-2" (click)="closeModal(modal)">
+          Cancel
+        </button>
+        <button class="button button-submit" (click)="submitModal(modal)">
+            Submit
+        </button>
+      </app-modal>
+    <div *ngFor="let todo of filteredTodos" class="todo-item">
+        <app-todo-item 
+            [todo]="todo"
+            (editEvent)="openModal(modal, todo)"
+            (deleteEvent)="deleteTodo(todo)"
+            (updateCompleteStatusEvent)="updateCompleteStatus(todo)"
+        >
+        </app-todo-item>
+    </div>
+</div>
+

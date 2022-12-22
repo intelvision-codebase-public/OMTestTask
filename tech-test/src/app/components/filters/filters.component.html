@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-center">
+    <div class="button btn-success mr-2" [class.current-filter]="currentFilter === filterEnum.Complete" (click)="filterTodos(filterEnum.Complete)">Show complete</div>
+    <div class="button btn-info mr-2" [class.current-filter]="currentFilter === filterEnum.Uncomplete" (click)="filterTodos(filterEnum.Uncomplete)">Show uncomplete</div>
+    <div class="button btn-primary" [class.current-filter]="currentFilter === filterEnum.All" (click)="filterTodos(filterEnum.All)">Show all</div>
+</div>
